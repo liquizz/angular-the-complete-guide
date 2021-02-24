@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+
+interface Recipe {
+  name: string;
+  description: string;
+  imagePath: string;
+}
 
 @Component({
   selector: 'app-recipe-item',
@@ -7,9 +13,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecipeItemComponent implements OnInit {
 
+  @Input('recipeElement') recipeElement: Recipe;
+
   constructor() { }
 
   ngOnInit() {
   }
+
+
 
 }
