@@ -1,0 +1,8 @@
+<app-game-control
+  (numberCreated)="numberCreated($event)"
+></app-game-control>
+
+<div>
+  <app-even *ngIf="currentNumber % 2 === 1"></app-even>
+  <app-odd *ngIf="currentNumber % 2 === 0"></app-odd>
+</div>
