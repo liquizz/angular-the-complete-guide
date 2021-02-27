@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  @ViewChild('form') f: NgForm;
+
+  subscriptions = ['Basic', 'Advanced', 'Pro'];
+  defaultSub = 'basic';
+
   title = 'template-driven-forms-task';
+
+  onSubmit(): void {
+    console.log(this.f.value);
+  }
 }
