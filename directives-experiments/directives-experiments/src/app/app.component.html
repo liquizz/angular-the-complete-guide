@@ -1,3 +1,31 @@
 <p>Directives experiments</p>
 
 <div appStyledBackground>This block is styled with attribute directive!</div>
+
+<div [appStyledBackgroundHostlistener]="'green'" transparentInputColor="azure">This block is styled with styled-background-hostlistener</div>
+
+<ng-template [ngIf]="dataArray.length > 0">
+  <div>
+    First number of array: {{ dataArray[0] }}
+  </div>
+</ng-template>
+
+<ng-template [appUnless]="!(dataArray.length > 0)">
+  <div>
+    First number of array: {{ dataArray[0] }}
+  </div>
+</ng-template>
+
+<div *appUnless="!(dataArray.length > 0)">
+  First number of array: {{ dataArray[0] }}
+</div>
+
+<button (click)="onClick(5)">Add 5 to var</button>
+<button (click)="onClick(-5)">Subtract 5 from var</button>
+
+<div [ngSwitch]="value">
+  <p *ngSwitchCase="5">Value is 5</p>
+  <p *ngSwitchCase="10">Value is 10</p>
+  <p *ngSwitchCase="15">Value is 15</p>
+  <p *ngSwitchDefault>Value is out of bounds. Current value is: {{value}}</p>
+</div>

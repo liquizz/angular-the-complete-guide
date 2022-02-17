@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'directives-experiments';
+  dataArray: number[] = [1, 2, 3, 4, 5, 6, 7];
+  value = 0;
+
+  onClick(value: number): void {
+    this.value += value;
+  }
 }
